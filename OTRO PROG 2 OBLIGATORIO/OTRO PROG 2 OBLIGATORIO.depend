@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\main.cpp
+	<iostream>
+
+1731866372 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\boolean.cpp
+	"boolean.h"
+	<stdio.h>
+
+1724449251 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\boolean.h
+
+1731873595 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\cliente.cpp
+	"cliente.h"
+	<stdio.h>
+
+1731873269 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\cliente.h
+	"string_dinamico.h"
+
+1731777584 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\string_dinamico.h
+	"boolean.h"
+
+1725061990 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\fecha.cpp
+	"fecha.h"
+	<stdio.h>
+
+1724887904 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\fecha.h
+	"boolean.h"
+
+1731873595 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\listareclamos.cpp
+	"ListaReclamos.h"
+	"stdio.h"
+
+1731873269 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\listareclamos.h
+	"reclamo.h"
+
+1731873269 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\reclamo.h
+	"string_dinamico.h"
+	"fecha.h"
+
+1731873595 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\reclamo.cpp
+	"reclamo.h"
+	<stdio.h>
+
+1731788883 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\string_dinamico.cpp
+	"string_dinamico.h"
+	<stdio.h>
+
+1731873660 source:c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\arbolcliente.cpp
+	"ArbolCliente.h"
+	<stdio.h>
+
+1731874042 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\arbolcliente.h
+	"cliente.h"
+
