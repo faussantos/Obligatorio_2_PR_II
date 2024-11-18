@@ -2,31 +2,31 @@
 #include "stdio.h"
 void Crear (ListaR &L)
 {
- L = NULL;
+    L = NULL;
 }
 boolean Vacia (ListaR L)
 {
- boolean es = FALSE;
- if (L == NULL)
- es = TRUE;
- return es;
+    boolean es = FALSE;
+    if (L == NULL)
+        es = TRUE;
+    return es;
 }
 /* Precondici�n: lista NO vac�a */
 reclamo Primero (ListaR L)
 {
- return L -> info;
+    return L -> info;
 }
 /* Precondici�n: lista NO vac�a */
 void Resto (ListaR & L)
 {
- ListaR aux = L;
- L = L -> sig;
- delete aux;
+    ListaR aux = L;
+    L = L -> sig;
+    delete aux;
 }
 void InsFront (ListaR & L, reclamo r)
 {
- ListaR aux = new Nodo;
- aux -> info = r;
- aux -> sig = L;
- L = aux;
+    ListaR aux = new Nodo;
+    aux -> info = r;
+    aux -> sig = L;
+    L = aux;
 }

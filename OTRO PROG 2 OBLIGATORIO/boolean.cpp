@@ -7,15 +7,15 @@ void cargaBool (boolean &b)
     fflush(stdin);
     scanf("%c",&c);
     switch(c)
-        {
-        case 'V':
-        case 'v':
-            b = TRUE;
-            break;
-        case 'F':
-        case 'f':
-            b= FALSE;
-        }
+    {
+    case 'V':
+    case 'v':
+        b = TRUE;
+        break;
+    case 'F':
+    case 'f':
+        b= FALSE;
+    }
 }
 
 void printBool (boolean b)

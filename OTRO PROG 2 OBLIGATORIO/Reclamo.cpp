@@ -5,9 +5,10 @@ void cargaReclamo (reclamo &r)//verificar q el cliente exista y ordenarlos crono
     printf("Ingrese fecha de realizacion: ");
     cargaFecha(r.realizacion);
     while (!validarFecha(r.realizacion))
-    { printf("\n---FECHA INVALIDA INGRESE DEVUELTA----\n");
-    printf("Ingrese fecha de realizacion: ");
-    cargaFecha(r.realizacion);
+    {
+        printf("\n---FECHA INVALIDA INGRESE DEVUELTA----\n");
+        printf("Ingrese fecha de realizacion: ");
+        cargaFecha(r.realizacion);
     }
     printf("Ingrese motivo: ");
     scan(r.motivo);
@@ -28,7 +29,7 @@ void printReclamo(reclamo r)
     if (r.solucionado==FALSE)
         printf("\nPROBLEMA SOLUCIONADO: NO");
     else
-         printf("\nPROBLEMA SOLUCIONADO: SI");
+        printf("\nPROBLEMA SOLUCIONADO: SI");
 }
 
 int darNumReclamo (reclamo r)

@@ -1,38 +1,47 @@
 #include "ArbolCliente.h"
 #include <stdio.h>
 void crear (ArbolCliente &a)
-{ a = NULL; }
+{
+    a = NULL;
+}
 // Saber si un árbol está vacío
 boolean esVacio (ArbolCliente a)
 {
-boolean es = TRUE;
-if (a != NULL)
-es = FALSE;
-return es;
+    boolean es = TRUE;
+    if (a != NULL)
+        es = FALSE;
+    return es;
 }
 // Obtener la raíz del árbol
 //Precondición: el árbol no es nulo
 cliente darRaiz (ArbolCliente a)
-{ return a->info; }
+{
+    return a->info;
+}
 // Devolver un subárbol izquierdo
 ArbolCliente hijoIzquierdo (ArbolCliente a)
-{ return a->hIzq; }
+{
+    return a->hIzq;
+}
 // Devolver un subárbol derecho
 ArbolCliente hijoDerecho (ArbolCliente a)
-{ return a->hDer; }
+{
+    return a->hDer;
+}
 // Dados dos árboles, construir otro árbol con una nueva raíz y que los tenga como hijos izq. y der.
 void Cons (ArbolCliente i, ArbolCliente d, cliente raiz, ArbolCliente &a)
 {
-a = new Nodo;
-a->info = raiz;
-a->hIzq = i;
-a->hDer = d;
+    a = new Nodo;
+    a->info = raiz;
+    a->hIzq = i;
+    a->hDer = d;
 }
 
 void insertarCliente (ArbolCliente &a, cliente c)// c no pertence al arbol
 {
     if (a==NULL)
-    {   a=new Nodo;
+    {
+        a=new Nodo;
         a->info=c;
         a->hIzq=NULL;
         a->hDer=NULL;

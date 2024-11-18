@@ -1,11 +1,12 @@
 #ifndef ARBOLCLIENTE_H_INCLUDED
 #define ARBOLCLIENTE_H_INCLUDED
 #include "cliente.h"
-typedef struct nodoA {
+typedef struct nodoA
+{
 
-cliente info;
-nodoA * hIzq;
-nodoA * hDer;
+    cliente info;
+    nodoA * hIzq;
+    nodoA * hDer;
 } Nodo;
 
 typedef Nodo * ArbolCliente;

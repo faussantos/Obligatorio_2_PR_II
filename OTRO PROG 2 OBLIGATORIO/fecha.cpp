@@ -35,32 +35,36 @@ boolean validarFecha (fecha f)
     boolean valido=TRUE;
     switch(f.mes)
     {
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12: if(f.dia<1||f.dia>31)
-                    valido = FALSE;
-                 break;
-        case 4:
-        case 6:
-        case 9:
-        case 11: if(f.dia<1||f.dia>30)
-                    valido = FALSE;
-                 break;
-        case 2: if(f.anio%4==0)
-                {
-                    if(f.dia<1||f.dia>29)
-                        valido = FALSE;
-                }
-                else
-                {
-                    if(f.dia<1||f.dia>28)
-                        valido = FALSE;
-                }
-        default: valido = FALSE;
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        if(f.dia<1||f.dia>31)
+            valido = FALSE;
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        if(f.dia<1||f.dia>30)
+            valido = FALSE;
+        break;
+    case 2:
+        if(f.anio%4==0)
+        {
+            if(f.dia<1||f.dia>29)
+                valido = FALSE;
+        }
+        else
+        {
+            if(f.dia<1||f.dia>28)
+                valido = FALSE;
+        }
+    default:
+        valido = FALSE;
     }
     return valido;
 }
