@@ -27,6 +27,8 @@ long int darCedula_reclamo (reclamo r);
 
 boolean darSolucionado (reclamo r);
 
+boolean validarReclamo (reclamo r, reclamo a);
+
 //FUNCIONES ADICIONALES
 
 #endif // RECLAMO_H_INCLUDED

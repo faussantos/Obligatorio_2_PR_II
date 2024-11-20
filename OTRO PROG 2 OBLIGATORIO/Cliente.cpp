@@ -67,6 +67,7 @@ int darCantidadReclamos(cliente c)
 }
 
 
+
 ////FUNCIONES ADICIONALESK
 //Dada la cédula que identifica a un cliente, borrar dicho cliente del sistema. Se debe verificar
 //previamente que la cédula del cliente a borrar exista en el sistema. Además de borrar el

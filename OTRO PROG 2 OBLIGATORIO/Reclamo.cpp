@@ -1,6 +1,6 @@
 #include "reclamo.h"
 #include <stdio.h>
-void cargaReclamo (reclamo &r)//verificar q el cliente exista y tiene q ser cronologicamente despues del ultimo reclamo registeado
+void cargaReclamo (reclamo &r)//verificar q el cliente exista y  validarreclamo ==true;
 {
     printf("Ingrese fecha de realizacion: ");
     cargaFecha(r.realizacion);

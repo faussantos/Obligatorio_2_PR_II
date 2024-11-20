@@ -123,3 +123,16 @@ void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
         }
     }
 }
+boolean ExisteCliente (ArbolCliente a, long int ci)
+{
+    boolean b=FALSE;
+    if (ci==darCedula_cliente(a->info))
+        b=TRUE;
+    else
+    {
+        ExisteCliente(a->hIzq,ci);
+        ExisteCliente(a->hDer,ci);
+    }
+    return b;
+}
+
