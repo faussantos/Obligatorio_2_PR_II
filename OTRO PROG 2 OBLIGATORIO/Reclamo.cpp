@@ -39,7 +39,7 @@ int darNumReclamo (reclamo r)
 
 fecha darFecha(reclamo r)
 {
-
+    return r.realizacion;
 }
 
 void darMotivo (reclamo r, strings &s)

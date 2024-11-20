@@ -18,6 +18,8 @@ ArbolCliente hijoDerecho (ArbolCliente a);
 void borrarClienteminimo (ArbolCliente &a);
 void Cons (ArbolCliente i, ArbolCliente d, cliente raiz, ArbolCliente &a);
 void insertarCliente (ArbolCliente &a, cliente c);// c no pertence al arbol
-
+int ContarClientes (ArbolCliente a);
+int ContarCLientesNorec (ArbolCliente a);
+void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci);
 
 #endif // ARBOLCLIENTE_H_INCLUDED

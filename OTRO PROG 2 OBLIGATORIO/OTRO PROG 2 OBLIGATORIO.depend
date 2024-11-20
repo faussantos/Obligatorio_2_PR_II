@@ -51,11 +51,11 @@
 1731874042 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\arbolcliente.h
 	"cliente.h"
 
-1731969773 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
+1732136957 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
 	"ArbolCliente.h"
 	<stdio.h>
 
-1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
+1732137050 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
 	"cliente.h"
 
 1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.h
@@ -66,7 +66,7 @@
 
 1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.h
 
-1731969773 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.cpp
+1731969894 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.cpp
 	"boolean.h"
 	<stdio.h>
 
@@ -74,28 +74,28 @@
 	"cliente.h"
 	<stdio.h>
 
-1731969773 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.cpp
+1731969894 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.cpp
 	"fecha.h"
 	<stdio.h>
 
 1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.h
 	"boolean.h"
 
-1731969773 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
+1731969894 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
 	"ListaReclamos.h"
 	"stdio.h"
 
-1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
+1731969894 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
 	"reclamo.h"
 
-1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.h
+1731969888 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.h
 	"string_dinamico.h"
 	"fecha.h"
 
 1731969773 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
 	<iostream>
 
-1731969773 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.cpp
+1732137001 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.cpp
 	"reclamo.h"
 	<stdio.h>
 

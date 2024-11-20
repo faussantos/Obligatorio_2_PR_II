@@ -14,5 +14,6 @@ boolean Vacia (ListaR L);
 reclamo Primero (ListaR L);
 void Resto (ListaR & L);
 void InsFront (ListaR & L, reclamo r);
+int LargoReclamos (ListaR L);
 
 #endif // LISTARECLAMOS_H_INCLUDED

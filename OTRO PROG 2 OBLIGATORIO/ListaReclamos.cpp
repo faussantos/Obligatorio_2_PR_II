@@ -30,3 +30,13 @@ void InsFront (ListaR & L, reclamo r)
     aux -> sig = L;
     L = aux;
 }
+
+int LargoReclamos (ListaR L)
+//indica el largo de la cantidad de reclamos para poder restarle a la cantidad total
+//de clientes de esa manerra la diferencia sera la cantidad de cleintes q no reclamaron
+{
+ if (L == NULL)
+ return 0;
+ else
+ return 1 + LargoReclamos (L -> sig);
+}

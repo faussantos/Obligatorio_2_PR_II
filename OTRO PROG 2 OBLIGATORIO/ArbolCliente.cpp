@@ -70,3 +70,56 @@ void borrarClienteminimo (ArbolCliente &a)
     else
         borrarClienteminimo(a->hIzq);
 }
+
+int ContarClientes (ArbolCliente a)
+{
+    if (a == NULL)
+        return 0;
+    else
+        return 1 + ContarClientes (a -> hIzq) + ContarClientes (a -> hDer);
+}
+int ContarCLientesNorec (ArbolCliente a)
+{
+    if (a!=NULL)
+    {
+        if (darCantidadReclamos(a->info)==0)
+            return 1+ContarCLientesNorec(a->hDer)+ContarCLientesNorec(a->hIzq);
+        else
+            return ContarCLientesNorec(a->hDer)+ContarCLientesNorec(a->hIzq);
+    }
+    return 0;
+}
+
+void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
+{
+    if (a != NULL)
+    {
+        int reclamosActual = darCantidadReclamos(a->info);
+        long int cedulaActual = darCedula_cliente(a->info);
+        cantReclamos = reclamosActual;
+        ci = cedulaActual;
+
+        if (a->hIzq != NULL)
+        {
+            int cantReclamosIzq;
+            long int ciIzq;
+            CedulaMasRec(a->hIzq, cantReclamosIzq, ciIzq);
+            if (cantReclamosIzq > cantReclamos)
+            {
+                cantReclamos = cantReclamosIzq;
+                ci = ciIzq;
+            }
+        }
+        if (a->hDer != NULL)
+        {
+            int cantReclamosDer;
+            long int ciDer;
+            CedulaMasRec(a->hDer, cantReclamosDer, ciDer);
+            if (cantReclamosDer > cantReclamos)
+            {
+                cantReclamos = cantReclamosDer;
+                ci = ciDer;
+            }
+        }
+    }
+}
