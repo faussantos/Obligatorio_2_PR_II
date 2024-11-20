@@ -21,15 +21,15 @@ void cargaReclamo (reclamo &r)//verificar q el cliente exista y  validarreclamo 
 void printReclamo(reclamo r)
 {
     printf("NUMERO DE RECLAMO: %d",r.n_reclamo);
-    printf("\nFECHA DE REALIZACION : ");
+    printf("  FECHA DE REALIZACION : ");
     printFecha(r.realizacion);
-    printf("\nMOTIVO: ");
+    printf("   MOTIVO: ");
     print(r.motivo);
-    printf("\nCEDULA: %ld",r.ci_cliente);
+    printf("   CEDULA: %ld",r.ci_cliente);
     if (r.solucionado==FALSE)
-        printf("\nPROBLEMA SOLUCIONADO: NO");
+        printf("   PROBLEMA SOLUCIONADO: NO");
     else
-        printf("\nPROBLEMA SOLUCIONADO: SI");
+        printf("   PROBLEMA SOLUCIONADO: SI");
 }
 
 int darNumReclamo (reclamo r)

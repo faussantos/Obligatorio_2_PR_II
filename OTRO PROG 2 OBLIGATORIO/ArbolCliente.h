@@ -21,5 +21,6 @@ void insertarCliente (ArbolCliente &a, cliente c);// c no pertence al arbol
 int ContarClientes (ArbolCliente a);
 int ContarCLientesNorec (ArbolCliente a);
 void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci);
+boolean ExisteCliente (ArbolCliente a, long int ci);
 
 #endif // ARBOLCLIENTE_H_INCLUDED

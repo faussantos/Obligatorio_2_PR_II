@@ -123,7 +123,7 @@ void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
         }
     }
 }
-boolean ExisteCliente (ArbolCliente a, long int ci)
+boolean ExisteCliente (ArbolCliente a, long int ci)// tiene q estar registrado ese numero de cedula
 {
     boolean b=FALSE;
     if (ci==darCedula_cliente(a->info))
@@ -135,4 +135,5 @@ boolean ExisteCliente (ArbolCliente a, long int ci)
     }
     return b;
 }
+
 

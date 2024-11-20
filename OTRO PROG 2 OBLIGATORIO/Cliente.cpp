@@ -23,17 +23,17 @@ void cargaCliente(cliente &c)// verificar q no exista alguein con  la misma cedu
 void printCliente(cliente c)
 {
     printf("DATOS DEL CLIENTE:\n");
-    printf("Cedula: %ld",c.ci);
-    printf("\nNombre: ");
+    printf("  Cedula: %ld",c.ci);
+    printf("  Nombre: ");
     print(c.nombre);
-    printf("\nApellido: ");
+    printf("  Apellido: ");
     print(c.apellido);
-    printf("\nDireccion: ");
+    printf("  Direccion: ");
     print(c.direccion);
-    printf("\nTelefono: ");
-    printf("%ld",c.telefono);
-    printf("\nCantidad de reclamos: ");
-    printf("%d",c.cant_reclamos);
+    printf("  Telefono: ");
+    printf("  %ld",c.telefono);
+    printf("  Cantidad de reclamos: ");
+    printf("  %d",c.cant_reclamos);
 }
 
 long int darCedula_cliente(cliente c)

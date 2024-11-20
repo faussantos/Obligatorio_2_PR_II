@@ -35,8 +35,23 @@ int LargoReclamos (ListaR L)
 //indica el largo de la cantidad de reclamos para poder restarle a la cantidad total
 //de clientes de esa manerra la diferencia sera la cantidad de cleintes q no reclamaron
 {
- if (L == NULL)
- return 0;
- else
- return 1 + LargoReclamos (L -> sig);
+    if (L == NULL)
+        return 0;
+    else
+        return 1 + LargoReclamos (L -> sig);
 }
+
+void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe cliente dentro del main
+{
+    while (L!=NULL)
+    {
+        if(ci==darCedula_reclamo(L->info))
+            printReclamo(L->info);
+        else
+
+            L=L->sig;
+    }
+
+}
+
+
