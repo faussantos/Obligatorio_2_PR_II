@@ -1,10 +1,10 @@
 #include "reclamo.h"
 #include <stdio.h>
-void cargaReclamo (reclamo &r)//verificar q el cliente exista y ordenarlos cronolocgicamente tiene q ser despues del ultimo reclamo registeado
+void cargaReclamo (reclamo &r)//verificar q el cliente exista y tiene q ser cronologicamente despues del ultimo reclamo registeado
 {
     printf("Ingrese fecha de realizacion: ");
     cargaFecha(r.realizacion);
-    while (!validarFecha(r.realizacion))
+    while (!validarFecha(r.realizacion))// y comprobar tb que sea posterior a la fecha anterior del ulitmo reclmao registrado
     {
         printf("\n---FECHA INVALIDA INGRESE DEVUELTA----\n");
         printf("Ingrese fecha de realizacion: ");
@@ -56,3 +56,27 @@ boolean darSolucionado (reclamo r)
 {
     return r.solucionado;
 }
+boolean validarReclamo (reclamo r, reclamo a)// EL PRIMER RECLAMO ES EL NUEVO A INGRESAR
+{
+    boolean b=FALSE;
+    if (darAnio(r.realizacion)>darAnio(a.realizacion))
+        b= TRUE;
+    else
+    {
+        if (darMes(r.realizacion)==darMes(a.realizacion))
+            b= TRUE;
+        else
+        {
+            if (darDia(r.realizacion)>darDia(a.realizacion))
+                b= TRUE;
+            else
+            {
+                if (darDia(r.realizacion)==darDia(a.realizacion))
+                    b=TRUE;
+            }
+        }
+    }
+    return b;
+}
+
+
