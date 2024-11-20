@@ -46,12 +46,22 @@ void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe 
     while (L!=NULL)
     {
         if(ci==darCedula_reclamo(L->info))
-            printReclamo(L->info);
+           {
+               printReclamo(L->info);
+               L=L->sig;
+           }
         else
-
             L=L->sig;
     }
-
 }
-
+boolean ExisteReclamo (ListaR L, int num )
+{   boolean b=FALSE;
+    while (L!=NULL&&b==FALSE)
+    {
+        if (num==darNumReclamo(L->info))
+            b=TRUE;
+        L=L->sig;
+    }
+    return b;
+}
 
