@@ -23,5 +23,7 @@ int ContarClientes (ArbolCliente a);
 int ContarCLientesNorec (ArbolCliente a);
 void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci);
 boolean ExisteCliente (ArbolCliente a, long int ci);
+void listar_cliente_ci(ArbolCliente a, long int ci);
+int cant_clientes_apellido (strings apellido, ArbolCliente a);
 
 #endif // ARBOLCLIENTE_H_INCLUDED

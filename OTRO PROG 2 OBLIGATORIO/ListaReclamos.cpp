@@ -68,3 +68,52 @@ void InsBack (ListaR &L, reclamo r)
     aux -> sig -> sig = NULL;
     aux -> sig -> info = r;
 }
+
+//PRECONDICION: Ambas fechas son validas, la primera es menor o igual a la segunda y la lista no esta vacia
+int cant_reclamos_2fechas(ListaR l, fecha f1, fecha f2)
+{
+    int cant = 0;
+    while(fechaMenor(darFecha(l->info),f1)==TRUE && l!=NULL)
+    {
+        l=l->sig;
+    }
+    while(fechaMenor(darFecha(l->info),f2) && l!=NULL)
+    {
+        cant++;
+        l=l->sig;
+    }
+    return cant;
+}
+
+//Devuelve la cedula de un cliente del primer reclamo
+//PRECONDICION: RECLAMO NO PUEDE ESTAR VACIO
+long int ci_numeroreclamo(ListaR l)
+{
+    return darCedula_reclamo(l->info);
+}
+
+//DEVUELVE UN PUNTERO CON LA DIRECCION DE MEMORIA DEL RECLAMO EN CASO DE ENCONTRAR EL NUMERO DE RECLAMO. SINO DEVUELVE PUNTERO NULL
+ListaR puntero_numReclamo (ListaR l, int num)
+{
+    while(l!=NULL && num!=darNumReclamo(l->info))
+    {
+        l=l->sig;
+    }
+    return l;
+}
+
+void CantidadResueltosSinResolver(ListaR L, int &resueltos, int &sinResolver)
+{
+    resueltos = 0;
+    sinResolver = 0;
+
+    while (L!=NULL)
+    {
+        if(darSolucionado(L->info) == TRUE)
+            resueltos++;
+        else
+            sinResolver++;
+
+        L=L->sig;
+    }
+}

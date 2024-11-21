@@ -136,4 +136,37 @@ boolean ExisteCliente (ArbolCliente a, long int ci)// tiene q estar registrado e
     return b;
 }
 
+int cant_clientes_apellido (strings apellido, ArbolCliente a)
+{
+    boolean iguales;
+    strings s;
+    if(a==NULL)
+        return 0;
+    else
+    {
+        strcrear(s);
+        darNombre(a->info,s);
+        iguales = streq(apellido,s);
+        if(iguales)
+            return 1 + cant_clientes_apellido(apellido,a->hIzq) + cant_clientes_apellido(apellido,a->hDer);
+        else
+            return cant_clientes_apellido(apellido,a->hIzq) + cant_clientes_apellido(apellido,a->hDer);
+    }
+}
+
+
+void listar_cliente_ci(ArbolCliente a, long int ci)
+{
+    while(darCedula_cliente(a->info)!=ci && a!=NULL)
+    {
+        if(darCedula_cliente(a->info)>ci)
+            a=a->hIzq;
+        else
+            a=a->hDer;
+    }
+    if(a!=NULL)
+        printCliente(a->info);
+    else
+        printf("ERROR: Cliente no encontrado");
+}
 

@@ -20,4 +20,8 @@ int darAnio (fecha f);
 
 boolean validarFecha (fecha f);
 
+boolean compararFecha (fecha f1, fecha f2);
+
+boolean fechaMenor (fecha f1, fecha f2);
+
 #endif // FECHA_H_INCLUDED
