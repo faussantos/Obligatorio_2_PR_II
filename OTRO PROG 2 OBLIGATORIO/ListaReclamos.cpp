@@ -1,5 +1,5 @@
 #include "ListaReclamos.h"
-#include "stdio.h"
+
 void Crear (ListaR &L)
 {
     L = NULL;

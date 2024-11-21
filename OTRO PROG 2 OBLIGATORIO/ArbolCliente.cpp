@@ -1,5 +1,5 @@
 #include "ArbolCliente.h"
-#include <stdio.h>
+
 void crear (ArbolCliente &a)
 {
     a = NULL;

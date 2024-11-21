@@ -1,6 +1,7 @@
 #ifndef ARBOLCLIENTE_H_INCLUDED
 #define ARBOLCLIENTE_H_INCLUDED
 #include "cliente.h"
+#include <stdio.h>
 typedef struct nodoA
 {
 

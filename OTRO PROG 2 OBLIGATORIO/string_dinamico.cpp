@@ -34,22 +34,29 @@ void strcop (strings &s1, strings s2)
     s1[i]='\0';
 }
 
-void scan (strings &s)
+//LEER STRING
+void scan(strings &cadena)
 {
-    strings aux = new char[MAX];
-    int i=0;
+    strcrear(cadena);
+
+    strings cadenaAux;
+    cadenaAux = new char [MAX];
+
+    int i = 0;
     char c;
-    fflush (stdin);
-    scanf ("%c", &c);
-    while (c!= '\n' && i < MAX-1)
+
+    fflush(stdin);
+    scanf("%c", &c);
+
+    while(i < MAX && c != '\n')
     {
-        aux[i] = c;
+        cadenaAux[i] = c;
+        scanf("%c", &c);
         i++;
-        scanf ("%c", &c);
     }
-    aux[i] = '\0';
-    strcop (s,aux);
-    strdestruir (aux);
+
+    strcop(cadena, cadenaAux);
+    strdestruir(cadenaAux);
 }
 
 void strcon(strings &s1, strings s2)

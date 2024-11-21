@@ -1,6 +1,6 @@
 #ifndef LISTARECLAMOS_H_INCLUDED
 #define LISTARECLAMOS_H_INCLUDED
-
+#include <stdio.h>
 #include "reclamo.h"
 typedef struct Nodol
 {
