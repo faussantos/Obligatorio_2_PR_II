@@ -15,5 +15,6 @@ reclamo Primero (ListaR L);
 void Resto (ListaR & L);
 void InsFront (ListaR & L, reclamo r);
 int LargoReclamos (ListaR L);
+void InsBack (ListaR &L, reclamo r);
 
 #endif // LISTARECLAMOS_H_INCLUDED

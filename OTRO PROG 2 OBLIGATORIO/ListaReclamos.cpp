@@ -54,14 +54,17 @@ void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe 
             L=L->sig;
     }
 }
-boolean ExisteReclamo (ListaR L, int num )
-{   boolean b=FALSE;
-    while (L!=NULL&&b==FALSE)
-    {
-        if (num==darNumReclamo(L->info))
-            b=TRUE;
-        L=L->sig;
-    }
-    return b;
-}
+void InsBack (ListaR &L, reclamo r)
+{
+    ListaR aux = L;
 
+    while(aux -> sig != NULL)
+    {
+        aux = aux -> sig;
+    }
+
+    aux -> sig = new Nodo;
+
+    aux -> sig -> sig = NULL;
+    aux -> sig -> info = r;
+}

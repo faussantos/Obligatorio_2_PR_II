@@ -103,12 +103,12 @@
 	"string_dinamico.h"
 	<stdio.h>
 
-1732146732 source:c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
+1732147175 source:c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
 	"ArbolCliente.h"
-	<stdio.h>
 
-1732144606 c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
+1732147175 c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
 	"cliente.h"
+	<stdio.h>
 
 1732137124 c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.h
 	"string_dinamico.h"
@@ -133,10 +133,10 @@
 1724887904 c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.h
 	"boolean.h"
 
-1732146732 source:c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
+1732148193 source:c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
 	"ListaReclamos.h"
 
-1732146732 c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
+1732148376 c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
 	<stdio.h>
 	"reclamo.h"
 
@@ -144,7 +144,7 @@
 	"string_dinamico.h"
 	"fecha.h"
 
-1732147090 source:c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
+1732148193 source:c:\users\felip\onedrive\escritorio\proyectos codeblock\obligatorio 2 pr 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
 	<iostream>
 	"menu.h"
 	"ListaReclamos.h"
