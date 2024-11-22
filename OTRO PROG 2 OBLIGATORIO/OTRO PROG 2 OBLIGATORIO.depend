@@ -173,7 +173,7 @@
 
 1731970310 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.h
 
-1732285973 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.cpp
+1732296423 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.cpp
 	"cliente.h"
 	<stdio.h>
 
@@ -183,7 +183,7 @@
 1731970310 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\string_dinamico.h
 	"boolean.h"
 
-1732294486 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
+1732311198 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	"menu.h"
@@ -222,7 +222,7 @@
 	"fecha.h"
 	<stdio.h>
 
-1732283443 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
+1732311569 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
 	"ListaReclamos.h"
 
 1732277868 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\menu.cpp

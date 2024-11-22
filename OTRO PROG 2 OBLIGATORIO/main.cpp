@@ -222,10 +222,10 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
             {
                 if(compararFecha(fechaIngresada1, fechaIngresada2) == TRUE || fechaMenor(fechaIngresada1, fechaIngresada2) == TRUE)
                 {
-                    if(listaReclamos!=NULL)
+                    if(!Vacia(listaReclamos))
                     {
                         cantidadReclamosRangoFechas = cant_reclamos_2fechas(listaReclamos, fechaIngresada1, fechaIngresada2);
-                        printf("\nExisten %d reclamos en el rango de fechas ingresado\n");
+                        printf("\nExisten %d reclamos en el rango de fechas ingresado\n",cantidadReclamosRangoFechas);
                     }
                     else
                         printf("\nERROR: No existen reclamos cargados\n");

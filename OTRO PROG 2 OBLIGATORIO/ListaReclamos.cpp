@@ -142,15 +142,43 @@ fecha ObtenerFechaUltimoReclamo (ListaR L)
 int cant_reclamos_2fechas(ListaR l, fecha f1, fecha f2)
 {
     int cant = 0;
-    while(fechaMenor(darFecha(l->info),f1)==TRUE && l->sig!=NULL)
+    boolean seguir;
+    while(l!=NULL && seguir)
     {
+        if(fechaMenor(darFecha(l->info),f1))
+            seguir = FALSE;
         l=l->sig;
     }
-    while(fechaMenor(darFecha(l->info),f2) && l->sig!=NULL)
+    seguir = TRUE;
+    while(l!=NULL && seguir)
     {
-        cant++;
-        l=l->sig;
+        if(!fechaMenor(darFecha(l->info),f2)&&!compararFecha(darFecha(l->info),f2))
+            seguir = FALSE;
+        else
+        {
+            cant++;
+            l=l->sig;
+        }
+
+
     }
+
+//    while(l!=NULL && fechaMenor(aux,f1)==TRUE)
+//    {
+//        printFecha(aux);
+//        printf("\n");
+//        printFecha(f1);
+//        l=l->sig;
+//        aux=darFecha()
+//    }
+//    while(l!=NULL && (fechaMenor(darFecha(l->info),f2) || !compararFecha(darFecha(l->info),f2)));
+//    {
+//        printFecha(darFecha(l->info));
+//        printf("\n");
+//        printFecha(f2);
+//        cant++;
+//        l=l->sig;
+//    }
     return cant;
 }
 
