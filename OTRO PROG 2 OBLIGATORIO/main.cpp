@@ -237,10 +237,10 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
                 printf(":: CLIENTE CON MAS RECLAMOS ::\n\n");
                 CedulaMasRec(ArbolClientes,cantMayorReclamos,ciMasReclamos);
                 printf("Cedula: %ld",ciMasReclamos);
-                printf("\nCantidad de reclamos: %d",cantMayorReclamos);
+                printf("\nCantidad de reclamos: %d\n\n",cantMayorReclamos);
             }
             else
-                printf("ERROR: No hay clientes registrados");
+                printf("ERROR: No hay clientes registrados\n");
             system("pause");
             break;
         case 0:
