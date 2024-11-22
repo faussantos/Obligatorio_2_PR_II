@@ -122,6 +122,7 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
             break;
         case 3:
             //Reclamos por fecha
+            printf(":: RECLAMOS DE FECHA ::");
             cargaFecha(fechaIngresada);
             if(validarFecha(fechaIngresada))
             {
@@ -135,6 +136,7 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
             break;
         case 4:
             //Cliente por reclamo
+            printf(":: INFORMACION DE CLIENTE POR NUMERO DE RECLAMO ::\n\n");
             printf("Ingrese el numero de reclamo: ");
             scanf("%d",&nroReclamo);
 
@@ -187,6 +189,7 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
         {
         case 1:
             //Clientes con apellido repetido
+            printf(":: CANTIDAD DE CLIENTES CON EL MISMO APELLIDO ::\n\n");
             printf("Ingrese un apellido: ");
             scan(apellidoIngresado);
             cantidadClientesApellido = cant_clientes_apellido(apellidoIngresado, ArbolClientes);
@@ -200,14 +203,16 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
             system("pause");
             break;
         case 3:
+            printf(":: CANTIDAD DE RECLAMOS RESUELTOS Y SIN RESOLVER :: \n\n");
             CantidadResueltosSinResolver(listaReclamos, reclamosResueltos, reclamosSinResolver);
-            printf("+ RESUELTOS: %d", reclamosResueltos);
-            printf("+ SIN RESOLVER: %d", reclamosSinResolver);
+            printf("Resueltos: %", reclamosResueltos);
+            printf("\nSin resolver: %d", reclamosSinResolver);
             system("pause");
             //Reclamos solucionados / sin solucionar
             break;
         case 4:
             //Reclamos por rango de fechas
+            printf(":: RECLAMOS POR RANGO DE FECHAS ::");
             cargaFecha(fechaIngresada1);
             cargaFecha(fechaIngresada2);
 

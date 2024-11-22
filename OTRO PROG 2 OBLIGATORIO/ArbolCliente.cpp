@@ -92,7 +92,7 @@ int ContarCLientesNorec (ArbolCliente a)
 //PRECONDICIÓN: EL ARBOL NO PUEDE ESTAR VACIO
 void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
 {
-    if (a == NULL)
+    if (a != NULL)
     {
         int reclamosActual = darCantidadReclamos(a->info);
         long int cedulaActual = darCedula_cliente(a->info);
@@ -123,6 +123,7 @@ void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
         }
     }
 }
+
 
 boolean ExisteCliente (ArbolCliente a, long int ci)// tiene q estar registrado ese numero de cedula
 {
