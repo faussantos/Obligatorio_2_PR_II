@@ -63,6 +63,7 @@ boolean validarFecha (fecha f)
             if(f.dia<1||f.dia>28)
                 valido = FALSE;
         }
+        break;
     default:
         valido = FALSE;
     }

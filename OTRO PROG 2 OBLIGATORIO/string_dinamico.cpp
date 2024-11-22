@@ -48,13 +48,13 @@ void scan(strings &cadena)
     fflush(stdin);
     scanf("%c", &c);
 
-    while(i < MAX && c != '\n')
+    while(i < MAX-1&& c != '\n')
     {
         cadenaAux[i] = c;
         scanf("%c", &c);
         i++;
     }
-
+    cadenaAux[i] = '\0';
     strcop(cadena, cadenaAux);
     strdestruir(cadenaAux);
 }

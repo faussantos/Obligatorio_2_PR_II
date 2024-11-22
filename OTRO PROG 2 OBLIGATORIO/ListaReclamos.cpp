@@ -25,7 +25,7 @@ void Resto (ListaR & L)
 }
 void InsFront (ListaR & L, reclamo r)
 {
-    ListaR aux = new Nodo;
+    ListaR aux = new NodoLista;
     aux -> info = r;
     aux -> sig = L;
     L = aux;
@@ -46,27 +46,46 @@ void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe 
     while (L!=NULL)
     {
         if(ci==darCedula_reclamo(L->info))
-           {
-               printReclamo(L->info);
-               L=L->sig;
-           }
-        else
-            L=L->sig;
+        {
+            printReclamo(L->info);
+        }
+
+        L=L->sig;
     }
 }
+
+void ListarReclamosFecha (ListaR L, fecha f)
+{
+    while (L!=NULL)
+    {
+        if(compararFecha(darFecha(L->info), f) == TRUE)
+        {
+            printReclamo(L->info);
+        }
+
+        L=L->sig;
+    }
+}
+
 void InsBack (ListaR &L, reclamo r)
 {
-    ListaR aux = L;
-
-    while(aux -> sig != NULL)
+    if(L!=NULL)
     {
-        aux = aux -> sig;
+        ListaR aux = L;
+        while(aux -> sig != NULL)
+        {
+            aux = aux -> sig;
+        }
+        aux -> sig = new NodoLista;
+        aux -> sig -> sig = NULL;
+        aux -> sig -> info = r;
     }
-
-    aux -> sig = new Nodo;
-
-    aux -> sig -> sig = NULL;
-    aux -> sig -> info = r;
+    else
+    {
+        L = new NodoLista;
+        L -> sig = NULL;
+        L -> info = r;
+    }
 }
 
 //PRECONDICION: Ambas fechas son validas, la primera es menor o igual a la segunda y la lista no esta vacia
@@ -117,3 +136,4 @@ void CantidadResueltosSinResolver(ListaR L, int &resueltos, int &sinResolver)
         L=L->sig;
     }
 }
+

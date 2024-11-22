@@ -4,7 +4,7 @@ void crear (ArbolCliente &a)
 {
     a = NULL;
 }
-// Saber si un árbol está vacío
+//Saber si un árbol está vacío
 boolean esVacio (ArbolCliente a)
 {
     boolean es = TRUE;
@@ -31,7 +31,7 @@ ArbolCliente hijoDerecho (ArbolCliente a)
 // Dados dos árboles, construir otro árbol con una nueva raíz y que los tenga como hijos izq. y der.
 void Cons (ArbolCliente i, ArbolCliente d, cliente raiz, ArbolCliente &a)
 {
-    a = new Nodo;
+    a = new NodoArbol;
     a->info = raiz;
     a->hIzq = i;
     a->hDer = d;
@@ -41,7 +41,7 @@ void insertarCliente (ArbolCliente &a, cliente c)// c no pertence al arbol
 {
     if (a==NULL)
     {
-        a=new Nodo;
+        a=new NodoArbol;
         a->info=c;
         a->hIzq=NULL;
         a->hDer=NULL;
@@ -59,8 +59,6 @@ void insertarCliente (ArbolCliente &a, cliente c)// c no pertence al arbol
 void borrarClienteminimo (ArbolCliente &a)
 {
     ArbolCliente aux;
-
-
     if (a->hIzq==NULL)
     {
         aux=a->hDer;
@@ -123,17 +121,23 @@ void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
         }
     }
 }
+
 boolean ExisteCliente (ArbolCliente a, long int ci)// tiene q estar registrado ese numero de cedula
 {
-    boolean b=FALSE;
-    if (ci==darCedula_cliente(a->info))
-        b=TRUE;
-    else
+    boolean encontre = FALSE;
+    while(a!=NULL && !encontre)
     {
-        ExisteCliente(a->hIzq,ci);
-        ExisteCliente(a->hDer,ci);
+        if (ci==darCedula_cliente(a->info))
+            encontre = TRUE;
+        else
+        {
+            if (ci<darCedula_cliente(a->info))
+                a=a->hIzq;
+            else
+                a=a->hDer;
+        }
     }
-    return b;
+    return encontre;
 }
 
 int cant_clientes_apellido (strings apellido, ArbolCliente a)
@@ -170,3 +174,58 @@ void listar_cliente_ci(ArbolCliente a, long int ci)
         printf("ERROR: Cliente no encontrado");
 }
 
+void listar_clientes_ordenados (ArbolCliente a)
+{
+    if(a != NULL)
+    {
+        listar_clientes_ordenados(a ->hIzq);
+        printCliente(a->info);
+        listar_clientes_ordenados(a ->hDer);
+    }
+}
+
+//PRECONDICION: Arbol no está vacio
+cliente clienteMinimo (ArbolCliente a)
+{
+    while(a->hIzq!=NULL)
+    {
+        a=a->hIzq;
+    }
+    return a->info;
+}
+
+/* Precondición : la ci existe en el árbol a */
+void Borrar (long int ci, ArbolCliente &a)
+{
+    ArbolCliente aux;
+    if (ci == darCedula_cliente(a->info))
+    {
+        if (a->hDer == NULL)
+        {
+            aux = a -> hIzq;
+            delete a;
+            a = aux;
+        }
+        else
+        {
+            if (a -> hIzq == NULL)
+            {
+                aux = a -> hDer;
+                delete a;
+                a = aux;
+            }
+            else
+            {
+                a -> info =  clienteMinimo(a -> hDer);
+                borrarClienteminimo (a -> hDer);
+            }
+        }
+    }
+    else
+    {
+        if (ci < darCedula_cliente(a -> info))
+            Borrar (ci, a -> hIzq);
+        else
+            Borrar (ci, a -> hDer);
+    }
+}

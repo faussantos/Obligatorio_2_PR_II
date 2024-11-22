@@ -1,6 +1,6 @@
 #include "reclamo.h"
 #include <stdio.h>
-void cargaReclamo (reclamo &r)//verificar q el cliente exista y  validarreclamo ==true;
+void cargaReclamo (reclamo &r,int x)//verificar q el cliente exista y  validarreclamo ==true;
 {
     printf("Ingrese fecha de realizacion: ");
     cargaFecha(r.realizacion);
@@ -16,6 +16,7 @@ void cargaReclamo (reclamo &r)//verificar q el cliente exista y  validarreclamo 
     scanf("%ld",&r.ci_cliente);
     printf("El problema fue solucionado?");
     cargaBool(r.solucionado);
+    r.n_reclamo=x;
 }
 
 void printReclamo(reclamo r)
@@ -44,6 +45,7 @@ fecha darFecha(reclamo r)
 
 void darMotivo (reclamo r, strings &s)
 {
+    strcrear(s);
     strcop(s,r.motivo);
 }
 

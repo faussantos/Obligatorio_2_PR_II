@@ -13,7 +13,7 @@ typedef struct
 } reclamo;
 
 //FUNCIONES BASICAS
-void cargaReclamo (reclamo &r);
+void cargaReclamo (reclamo &r, int x);
 
 void printReclamo(reclamo r);
 

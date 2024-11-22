@@ -43,16 +43,19 @@ long int darCedula_cliente(cliente c)
 
 void darNombre (cliente c, strings &s)
 {
+    strcrear(s);
     strcop(s,c.nombre);
 }
 
 void darApellido (cliente c, strings &s)
 {
+    strcrear(s);
     strcop(s,c.apellido);
 }
 
 void darDireccion (cliente c, strings &s)
 {
+    strcrear(s);
     strcop(s,c.direccion);
 }
 
