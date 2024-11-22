@@ -67,6 +67,42 @@ void ListarReclamosFecha (ListaR L, fecha f)
     }
 }
 
+long int ObtenerCedulaClienteReclamo (ListaR L, int numeroReclamo)
+{
+    long int ci;
+    boolean encontre = FALSE;
+
+    while (L!=NULL && encontre == FALSE)
+    {
+        if(darNumReclamo(L->info) == numeroReclamo)
+        {
+            ci = darCedula_reclamo(L->info);
+            encontre = TRUE;
+        }
+
+        L=L->sig;
+    }
+
+    return ci;
+}
+
+boolean ExisteReclamo (ListaR L, int numeroReclamo)
+{
+    boolean encontre = FALSE;
+
+    while (L!=NULL && encontre == FALSE)
+    {
+        if(darNumReclamo(L->info) == numeroReclamo)
+        {
+            encontre = TRUE;
+        }
+
+        L=L->sig;
+    }
+
+    return encontre;
+}
+
 void InsBack (ListaR &L, reclamo r)
 {
     if(L!=NULL)
@@ -86,6 +122,19 @@ void InsBack (ListaR &L, reclamo r)
         L -> sig = NULL;
         L -> info = r;
     }
+}
+
+//PRECONDICION: La lista de reclamos no puede estar vacia
+fecha ObtenerFechaUltimoReclamo (ListaR L)
+{
+    ListaR aux = L;
+
+    while(aux -> sig != NULL)
+    {
+        aux = aux -> sig;
+    }
+
+    return darFecha(aux ->info);
 }
 
 //PRECONDICION: Ambas fechas son validas, la primera es menor o igual a la segunda y la lista no esta vacia

@@ -39,4 +39,10 @@ void CantidadResueltosSinResolver(ListaR L, int &resueltos, int &sinResolver);
 
 void ListarReclamosCliente (ListaR L, long int ci);
 
+long int ObtenerCedulaClienteReclamo (ListaR L, int numeroReclamo);
+
+boolean ExisteReclamo (ListaR L, int numeroReclamo);
+
+fecha ObtenerFechaUltimoReclamo (ListaR L);
+
 #endif // LISTARECLAMOS_H_INCLUDED

@@ -46,16 +46,23 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
         case 3:
             //Agregar Reclamo
             siguienteNumeroReclamo = LargoReclamos(listaReclamos) + 1;
-            cargaReclamo(nuevoReclamo,siguienteNumeroReclamo);
+            cargaReclamo(nuevoReclamo, siguienteNumeroReclamo);
             if(ExisteCliente(ArbolClientes,darCedula_reclamo(nuevoReclamo)))
             {
-                InsBack(listaReclamos,nuevoReclamo);
-                printf("Reclamo ingresado con exito\n");
+                if(Vacia(listaReclamos) == TRUE || fechaMenor(darFecha(nuevoReclamo), ObtenerFechaUltimoReclamo(listaReclamos)) == FALSE)
+                {
+                    InsBack(listaReclamos,nuevoReclamo);
+                    printf("Reclamo ingresado con exito\n");
+                }
+                else
+                {
+                    printf("ERROR: La fecha ingresada debe ser mayor o igual a la del ultimo reclamo.\n");
+                }
             }
             else
                 printf("ERROR: No existe cliente con esa cedula.\n");
             system("pause");
-           break;
+            break;
         case 0:
             //Volver al menu principal
             break;
@@ -74,6 +81,8 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
     int opcionListados;
     fecha fechaIngresada;
     long int ci;
+    int nroReclamo;
+
     do
     {
         system("cls");
@@ -117,6 +126,19 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
             break;
         case 4:
             //Cliente por reclamo
+            printf("Ingrese el numero de reclamo: ");
+            scanf("%d",&nroReclamo);
+
+            if (ExisteReclamo(listaReclamos, nroReclamo) == TRUE)
+            {
+                ci = ObtenerCedulaClienteReclamo(listaReclamos, nroReclamo);
+                listar_cliente_ci(ArbolClientes, ci);
+            }
+            else
+            {
+                printf("El numero de reclamo ingresado no existe");
+            }
+
             system("pause");
             break;
         case 0:
@@ -132,11 +154,19 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
     while (opcionListados != 0);
 }
 
-void procesarConsultas(ListaR listaReclamos)
+void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
 {
+    int cantidadClientesApellido;
+    strings apellidoIngresado;
+
     int opcionConsultas;
     int reclamosResueltos;
     int reclamosSinResolver;
+
+    int cantidadReclamosRangoFechas;
+    fecha fechaIngresada1;
+    fecha fechaIngresada2;
+
     do
     {
         system("cls");
@@ -146,9 +176,15 @@ void procesarConsultas(ListaR listaReclamos)
         {
         case 1:
             //Clientes con apellido repetido
+            printf("Ingrese un apellido: ");
+            scan(apellidoIngresado);
+            cantidadClientesApellido = cant_clientes_apellido(apellidoIngresado, ArbolClientes);
+            printf("Existen %d clientes con el apellido ingresado", cantidadClientesApellido);
+            system("pause");
             break;
         case 2:
             //Clientes sin reclamos
+            system("pause");
             break;
         case 3:
             CantidadResueltosSinResolver(listaReclamos, reclamosResueltos, reclamosSinResolver);
@@ -159,9 +195,31 @@ void procesarConsultas(ListaR listaReclamos)
             break;
         case 4:
             //Reclamos por rango de fechas
+            cargaFecha(fechaIngresada1);
+            cargaFecha(fechaIngresada2);
+
+            if(validarFecha(fechaIngresada1) == TRUE || validarFecha(fechaIngresada2) == TRUE)
+            {
+                if(compararFecha(fechaIngresada1, fechaIngresada2) == TRUE || fechaMenor(fechaIngresada1, fechaIngresada2) == TRUE)
+                {
+                    cantidadReclamosRangoFechas = cant_reclamos_2fechas(listaReclamos, fechaIngresada1, fechaIngresada2);
+                    printf("Existen %d reclamos en el rango de fechas ingresado");
+                }
+                else
+                {
+                    printf("La primer fecha ingresada debe ser menor o igual a la segunda");
+                }
+            }
+            else
+            {
+                printf("Una de las fechas ingresadas no es valida");
+            }
+
+            system("pause");
             break;
         case 5:
             //Cliente con mas reclamos
+            system("pause");
             break;
         case 0:
             //Volver
@@ -198,7 +256,7 @@ int main()
             procesarListados(listaReclamos, ArbolClientes);
             break;
         case 3:
-            procesarConsultas(listaReclamos);
+            procesarConsultas(listaReclamos, ArbolClientes);
             break;
         case 0:
             // Salir del programa

@@ -73,8 +73,10 @@ boolean validarFecha (fecha f)
 boolean compararFecha (fecha f1, fecha f2)
 {
     boolean iguales=FALSE;
-    if(f1.dia!=f2.dia || f1.mes!=f2.mes || f1.anio!=f2.anio)
+
+    if(f1.dia==f2.dia && f1.mes==f2.mes && f1.anio==f2.anio)
         iguales = TRUE;
+
     return iguales;
 }
 
@@ -82,14 +84,14 @@ boolean compararFecha (fecha f1, fecha f2)
 boolean fechaMenor (fecha f1, fecha f2)
 {
     boolean menor = FALSE;
+
     if(f1.anio < f2.anio)
         menor = TRUE;
-    else
-        if (f1.anio==f2.anio && f1.mes < f2.mes)
-            menor = TRUE;
-        else
-            if(f1.anio==f2.anio && f1.mes==f2.mes && f1.dia < f2.dia)
-                menor = TRUE;
+    else if (f1.anio==f2.anio && f1.mes < f2.mes)
+        menor = TRUE;
+    else if(f1.anio==f2.anio && f1.mes==f2.mes && f1.dia < f2.dia)
+        menor = TRUE;
+
     return menor;
 }
 
