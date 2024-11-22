@@ -87,11 +87,16 @@ boolean fechaMenor (fecha f1, fecha f2)
 
     if(f1.anio < f2.anio)
         menor = TRUE;
-    else if (f1.anio==f2.anio && f1.mes < f2.mes)
-        menor = TRUE;
-    else if(f1.anio==f2.anio && f1.mes==f2.mes && f1.dia < f2.dia)
-        menor = TRUE;
-
+    else
+    {
+        if (f1.anio==f2.anio && f1.mes < f2.mes)
+            menor = TRUE;
+        else
+        {
+            if(f1.anio==f2.anio && f1.mes==f2.mes && f1.dia < f2.dia)
+                menor = TRUE;
+        }
+    }
     return menor;
 }
 

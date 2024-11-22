@@ -33,6 +33,7 @@ void printCliente(cliente c)
     printf(" %ld",c.telefono);
     printf("  Cantidad de reclamos: ");
     printf(" %d",c.cant_reclamos);
+    printf("\n");
 }
 
 long int darCedula_cliente(cliente c)

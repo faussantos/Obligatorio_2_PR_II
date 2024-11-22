@@ -142,11 +142,11 @@ fecha ObtenerFechaUltimoReclamo (ListaR L)
 int cant_reclamos_2fechas(ListaR l, fecha f1, fecha f2)
 {
     int cant = 0;
-    while(fechaMenor(darFecha(l->info),f1)==TRUE && l!=NULL)
+    while(fechaMenor(darFecha(l->info),f1)==TRUE && l->sig!=NULL)
     {
         l=l->sig;
     }
-    while(fechaMenor(darFecha(l->info),f2) && l!=NULL)
+    while(fechaMenor(darFecha(l->info),f2) && l->sig!=NULL)
     {
         cant++;
         l=l->sig;

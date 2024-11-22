@@ -205,23 +205,30 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
         case 3:
             printf(":: CANTIDAD DE RECLAMOS RESUELTOS Y SIN RESOLVER :: \n\n");
             CantidadResueltosSinResolver(listaReclamos, reclamosResueltos, reclamosSinResolver);
-            printf("Resueltos: %", reclamosResueltos);
+            printf("Resueltos: %d", reclamosResueltos);
             printf("\nSin resolver: %d", reclamosSinResolver);
             system("pause");
             //Reclamos solucionados / sin solucionar
             break;
         case 4:
             //Reclamos por rango de fechas
-            printf(":: RECLAMOS POR RANGO DE FECHAS ::");
+            printf(":: RECLAMOS POR RANGO DE FECHAS ::\n\n");
+            printf("Ingrese la fecha 1:");
             cargaFecha(fechaIngresada1);
+            printf("\nIngrese la fecha 2:");
             cargaFecha(fechaIngresada2);
 
-            if(validarFecha(fechaIngresada1) == TRUE || validarFecha(fechaIngresada2) == TRUE)
+            if(validarFecha(fechaIngresada1) == TRUE && validarFecha(fechaIngresada2) == TRUE)
             {
                 if(compararFecha(fechaIngresada1, fechaIngresada2) == TRUE || fechaMenor(fechaIngresada1, fechaIngresada2) == TRUE)
                 {
-                    cantidadReclamosRangoFechas = cant_reclamos_2fechas(listaReclamos, fechaIngresada1, fechaIngresada2);
-                    printf("Existen %d reclamos en el rango de fechas ingresado");
+                    if(listaReclamos!=NULL)
+                    {
+                        cantidadReclamosRangoFechas = cant_reclamos_2fechas(listaReclamos, fechaIngresada1, fechaIngresada2);
+                        printf("\nExisten %d reclamos en el rango de fechas ingresado\n");
+                    }
+                    else
+                        printf("\nERROR: No existen reclamos cargados\n");
                 }
                 else
                 {
@@ -230,7 +237,7 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
             }
             else
             {
-                printf("Una de las fechas ingresadas no es valida");
+                printf("\nERROR: Una de las fechas ingresadas no es valida\n");
             }
 
             system("pause");
