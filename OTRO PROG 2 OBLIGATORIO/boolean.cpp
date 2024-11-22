@@ -3,7 +3,7 @@
 void cargaBool (boolean &b)
 {
     char c;
-    printf("Ingrese (V)Para SI o (F)Para NO: ");
+    printf("Ingrese (V)erdadero o (F)also: ");
     fflush(stdin);
     scanf("%c",&c);
     switch(c)

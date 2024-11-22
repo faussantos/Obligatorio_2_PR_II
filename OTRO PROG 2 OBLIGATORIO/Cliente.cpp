@@ -22,18 +22,17 @@ void cargaCliente(cliente &c)// verificar q no exista alguein con  la misma cedu
 
 void printCliente(cliente c)
 {
-    printf("DATOS DEL CLIENTE:\n");
-    printf("  Cedula: %ld",c.ci);
+    printf("CI: %ld",c.ci);
     printf("  Nombre: ");
     print(c.nombre);
     printf("  Apellido: ");
     print(c.apellido);
     printf("  Direccion: ");
     print(c.direccion);
-    printf("  Telefono: ");
-    printf("  %ld",c.telefono);
+    printf("  Tel: ");
+    printf(" %ld",c.telefono);
     printf("  Cantidad de reclamos: ");
-    printf("  %d",c.cant_reclamos);
+    printf(" %d",c.cant_reclamos);
 }
 
 long int darCedula_cliente(cliente c)
@@ -69,9 +68,12 @@ int darCantidadReclamos(cliente c)
     return c.cant_reclamos;
 }
 
+void sumarUnReclamo (cliente &c)
+{
+    c.cant_reclamos++;
+}
 
-
-////FUNCIONES ADICIONALESK
+////FUNCIONES ADICIONALES
 //Dada la cédula que identifica a un cliente, borrar dicho cliente del sistema. Se debe verificar
 //previamente que la cédula del cliente a borrar exista en el sistema. Además de borrar el
 //cliente, también se deben borrar todos los reclamos que hayan sido hechos por dicho cliente.

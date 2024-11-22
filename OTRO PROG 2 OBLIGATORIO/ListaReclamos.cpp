@@ -48,6 +48,7 @@ void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe 
         if(ci==darCedula_reclamo(L->info))
         {
             printReclamo(L->info);
+            printf("\n");
         }
 
         L=L->sig;

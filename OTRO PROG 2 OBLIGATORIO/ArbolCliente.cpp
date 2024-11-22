@@ -12,23 +12,23 @@ boolean esVacio (ArbolCliente a)
         es = FALSE;
     return es;
 }
-// Obtener la raíz del árbol
+//Obtener la raíz del árbol
 //Precondición: el árbol no es nulo
 cliente darRaiz (ArbolCliente a)
 {
     return a->info;
 }
-// Devolver un subárbol izquierdo
+//Devolver un subárbol izquierdo
 ArbolCliente hijoIzquierdo (ArbolCliente a)
 {
     return a->hIzq;
 }
-// Devolver un subárbol derecho
+//Devolver un subárbol derecho
 ArbolCliente hijoDerecho (ArbolCliente a)
 {
     return a->hDer;
 }
-// Dados dos árboles, construir otro árbol con una nueva raíz y que los tenga como hijos izq. y der.
+//Dados dos árboles, construir otro árbol con una nueva raíz y que los tenga como hijos izq. y der.
 void Cons (ArbolCliente i, ArbolCliente d, cliente raiz, ArbolCliente &a)
 {
     a = new NodoArbol;
@@ -81,16 +81,18 @@ int ContarCLientesNorec (ArbolCliente a)
     if (a!=NULL)
     {
         if (darCantidadReclamos(a->info)==0)
-            return 1+ContarCLientesNorec(a->hDer)+ContarCLientesNorec(a->hIzq);
+            return 1+ContarCLientesNorec(a->hIzq)+ContarCLientesNorec(a->hDer);
         else
-            return ContarCLientesNorec(a->hDer)+ContarCLientesNorec(a->hIzq);
+            return ContarCLientesNorec(a->hIzq)+ContarCLientesNorec(a->hDer);
     }
-    return 0;
+    else
+        return 0;
 }
 
+//PRECONDICIÓN: EL ARBOL NO PUEDE ESTAR VACIO
 void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
 {
-    if (a != NULL)
+    if (a == NULL)
     {
         int reclamosActual = darCantidadReclamos(a->info);
         long int cedulaActual = darCedula_cliente(a->info);
@@ -227,4 +229,16 @@ void Borrar (long int ci, ArbolCliente &a)
         else
             Borrar (ci, a -> hDer);
     }
+}
+
+ArbolCliente devolverClienteCI(ArbolCliente a, long int ci)
+{
+    while(a!=NULL && darCedula_cliente(a->info)!=ci)
+    {
+        if(ci<darCedula_cliente(a->info))
+            a=a->hIzq;
+        else
+            a=a->hDer;
+    }
+    return a;
 }

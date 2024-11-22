@@ -167,23 +167,23 @@
 	<iostream>
 	"menu.h"
 
-1731970569 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.cpp
+1732278524 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.cpp
 	"boolean.h"
 	<stdio.h>
 
 1731970310 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.h
 
-1732228917 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.cpp
+1732285973 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.cpp
 	"cliente.h"
 	<stdio.h>
 
-1731970310 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.h
+1732286059 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.h
 	"string_dinamico.h"
 
 1731970310 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\string_dinamico.h
 	"boolean.h"
 
-1732236745 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
+1732285993 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	"menu.h"
@@ -192,7 +192,7 @@
 
 1732148726 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\menu.h
 
-1732236543 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
+1732277304 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
 	<stdio.h>
 	"reclamo.h"
 
@@ -203,7 +203,7 @@
 1732149507 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.h
 	"boolean.h"
 
-1732237423 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.cpp
+1732283292 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.cpp
 	"reclamo.h"
 	<stdio.h>
 
@@ -211,21 +211,21 @@
 	"string_dinamico.h"
 	<stdio.h>
 
-1732232887 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
+1732285973 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
 	"ArbolCliente.h"
 
-1732232863 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
+1732286033 c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
 	"cliente.h"
 	<stdio.h>
 
-1732235738 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.cpp
+1732278524 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.cpp
 	"fecha.h"
 	<stdio.h>
 
-1732237100 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
+1732283443 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
 	"ListaReclamos.h"
 
-1732148726 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\menu.cpp
+1732277868 source:c:\users\fauss\onedrive\escritorio\code ude\obligatorio 2 pr ii\obligatorio_2_pr_ii\otro prog 2 obligatorio\menu.cpp
 	<iostream>
 	"menu.h"
 

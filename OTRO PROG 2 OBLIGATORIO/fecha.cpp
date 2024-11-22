@@ -2,11 +2,11 @@
 #include <stdio.h>
 void cargaFecha (fecha &f)
 {
-    printf("Ingrese dia: ");
+    printf("\nDia: ");
     scanf("%d",&f.dia);
-    printf("Ingrese mes: ");
+    printf("Mes: ");
     scanf("%d",&f.mes);
-    printf("Ingrese anio: ");
+    printf("Anio: ");
     scanf("%d",&f.anio);
 }
 

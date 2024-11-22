@@ -2,21 +2,22 @@
 #include <stdio.h>
 void cargaReclamo (reclamo &r,int x)//verificar q el cliente exista y  validarreclamo ==true;
 {
-    printf("Ingrese fecha de realizacion: ");
+    r.n_reclamo=x;
+    printf("Ingrese fecha de reclamo");
     cargaFecha(r.realizacion);
     while (!validarFecha(r.realizacion))// y comprobar tb que sea posterior a la fecha anterior del ulitmo reclmao registrado
     {
         printf("\n---FECHA INVALIDA INGRESE DEVUELTA----\n");
-        printf("Ingrese fecha de realizacion: ");
+        printf("Ingrese fecha de reclamo: ");
         cargaFecha(r.realizacion);
     }
     printf("Ingrese motivo: ");
     scan(r.motivo);
-    printf("Ingrese cedula del cliente:");
+    printf("Ingrese cedula del cliente: ");
     scanf("%ld",&r.ci_cliente);
-    printf("El problema fue solucionado?");
+    printf("El problema fue solucionado?\n");
     cargaBool(r.solucionado);
-    r.n_reclamo=x;
+
 }
 
 void printReclamo(reclamo r)

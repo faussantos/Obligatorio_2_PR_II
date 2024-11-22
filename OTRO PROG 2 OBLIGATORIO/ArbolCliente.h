@@ -31,6 +31,7 @@ int ContarClientes (ArbolCliente a);
 
 int ContarCLientesNorec (ArbolCliente a);
 
+//PRECONDICIÓN: EL ARBOL NO PUEDE ESTAR VACIO
 void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci);
 
 boolean ExisteCliente (ArbolCliente a, long int ci);
@@ -44,5 +45,7 @@ void listar_clientes_ordenados (ArbolCliente a);
 void Borrar (long int ci, ArbolCliente &a);
 
 cliente clienteMinimo (ArbolCliente a);
+
+ArbolCliente devolverClienteCI (ArbolCliente a, long int ci);
 
 #endif // ARBOLCLIENTE_H_INCLUDED

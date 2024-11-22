@@ -11,6 +11,7 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
     int siguienteNumeroReclamo;
     long int ci;
     cliente c;
+    ArbolCliente aux;
     do
     {
         system("cls");
@@ -19,12 +20,12 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
         switch(opcionAltasBajas)
         {
         case 1:
-            printf(":: INGRESO DE CLIENTE ::\n");
+            printf(":: INGRESO DE CLIENTE ::\n\n");
             cargaCliente(c);
             if(!ExisteCliente(ArbolClientes,darCedula_cliente(c)))
             {
                 insertarCliente(ArbolClientes,c);
-                printf("Cliente ingresado con exito.\n");
+                printf("\nCliente ingresado con exito.\n");
             }
             else
                 printf("\nERROR: Cedula ya registrada");
@@ -32,35 +33,39 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
             break;
         case 2:
             //Eliminar Cliente
+            printf(":: ELIMINAR CLIENTE ::\n\n");
             printf("Ingrese la cedula del cliente a eliminar: ");
             scanf("%ld",&ci);
             if(ExisteCliente(ArbolClientes,ci))
             {
                 Borrar(ci,ArbolClientes);
-                printf("Cliente eliminado exitosamente.");
+                printf("\nCliente eliminado con exito.\n");
             }
             else
-                printf("Error: No existe cliente con esa cedula");
+                printf("\nError: No existe cliente con esa cedula\n");
             system("pause");
             break;
         case 3:
             //Agregar Reclamo
+            printf(":: AGREGAR RECLAMO ::\n\n");
             siguienteNumeroReclamo = LargoReclamos(listaReclamos) + 1;
             cargaReclamo(nuevoReclamo, siguienteNumeroReclamo);
-            if(ExisteCliente(ArbolClientes,darCedula_reclamo(nuevoReclamo)))
+            aux=devolverClienteCI(ArbolClientes,darCedula_reclamo(nuevoReclamo));
+            if(aux!=NULL)
             {
+                sumarUnReclamo(aux->info);
                 if(Vacia(listaReclamos) == TRUE || fechaMenor(darFecha(nuevoReclamo), ObtenerFechaUltimoReclamo(listaReclamos)) == FALSE)
                 {
                     InsBack(listaReclamos,nuevoReclamo);
-                    printf("Reclamo ingresado con exito\n");
+                    printf("\nReclamo ingresado con exito\n");
                 }
                 else
                 {
-                    printf("ERROR: La fecha ingresada debe ser mayor o igual a la del ultimo reclamo.\n");
+                    printf("\nERROR: La fecha ingresada debe ser mayor o igual a la del ultimo reclamo.\n");
                 }
             }
             else
-                printf("ERROR: No existe cliente con esa cedula.\n");
+                printf("\nERROR: No existe cliente con esa cedula.\n");
             system("pause");
             break;
         case 0:
@@ -92,23 +97,27 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
         {
         case 1:
             //Clientes
+            printf(":: LISTADO DE CLIENTES ::\n\n");
             if(!esVacio(ArbolClientes))
                 listar_clientes_ordenados(ArbolClientes);
             else
                 printf("Lista vacia");
+                printf("\n");
             system("pause");
             break;
         case 2:
             //Reclamos por cliente
+            printf(":: LISTADO DE RECLAMOS ::\n\n");
             printf("Ingrese la cedula del cliente a mostrar reclamos: ");
             scanf("%ld",&ci);
             if(ExisteCliente(ArbolClientes,ci))
             {
-                printf("::RECLAMOS DEL CLIENTE ::\n");
+                printf("\nReclamos:\n\n");
                 ListarReclamosCliente(listaReclamos,ci);
             }
             else
                 printf("Error: No existe cliente con esa cedula");
+                printf("\n");
             system("pause");
             break;
         case 3:
@@ -167,6 +176,8 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
     fecha fechaIngresada1;
     fecha fechaIngresada2;
 
+    long int ciMasReclamos;
+    int cantMayorReclamos;
     do
     {
         system("cls");
@@ -184,6 +195,8 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
             break;
         case 2:
             //Clientes sin reclamos
+            printf(":: CANTIDAD DE CLIENTES SIN RECLAMOS ::\n\n");
+            printf("Cantidad: %d\n\n",ContarCLientesNorec(ArbolClientes));
             system("pause");
             break;
         case 3:
@@ -219,6 +232,15 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
             break;
         case 5:
             //Cliente con mas reclamos
+            if(!esVacio(ArbolClientes))
+            {
+                printf(":: CLIENTE CON MAS RECLAMOS ::\n\n");
+                CedulaMasRec(ArbolClientes,cantMayorReclamos,ciMasReclamos);
+                printf("Cedula: %ld",ciMasReclamos);
+                printf("\nCantidad de reclamos: %d",cantMayorReclamos);
+            }
+            else
+                printf("ERROR: No hay clientes registrados");
             system("pause");
             break;
         case 0:

@@ -31,6 +31,8 @@ long int darTelefono(cliente c);
 
 int darCantidadReclamos(cliente c);
 
+void sumarUnReclamo (cliente &c);
+
 //FUNCIONES ADICIONALES
 
 
