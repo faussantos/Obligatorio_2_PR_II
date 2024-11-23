@@ -29,6 +29,12 @@ boolean darSolucionado (reclamo r);
 
 boolean validarReclamo (reclamo r, reclamo a);
 
+//PRECONDICIÓN: El archivo viene abierto para lectura
+void levantar_reclamo (reclamo &r, FILE * f);
+
+//PRECONDICIÓN: El archivo viene abierto para escritura
+void bajar_reclamo (reclamo r, FILE * f);
+
 //FUNCIONES ADICIONALES
 
 #endif // RECLAMO_H_INCLUDED

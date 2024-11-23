@@ -74,6 +74,31 @@ void sumarUnReclamo (cliente &c)
     c.cant_reclamos++;
 }
 
+//PRECONDICIÓN: El archivo viene abierto para escritura
+void bajar_cliente (cliente c, FILE * f)
+{
+    fwrite(&c.ci,sizeof(long int),1,f);
+    bajar_string(c.nombre,f);
+    bajar_string(c.apellido,f);
+    bajar_string(c.direccion,f);
+    fwrite(&c.telefono,sizeof(long int),1,f);
+    fwrite(&c.cant_reclamos,sizeof(int),1,f);
+}
+
+//PRECONDICIÓN: El archivo viene abierto para lectura
+void levantar_cliente (cliente &c, FILE * f)
+{
+    fread(&c.ci,sizeof(long int),1,f);
+    strcrear(c.nombre);
+    levantar_string(c.nombre,f);
+    strcrear(c.apellido);
+    levantar_string(c.apellido,f);
+    strcrear(c.direccion);
+    levantar_string(c.direccion,f);
+    fread(&c.telefono,sizeof(long int),1,f);
+    fread(&c.cant_reclamos,sizeof(int),1,f);
+}
+
 ////FUNCIONES ADICIONALES
 //Dada la cédula que identifica a un cliente, borrar dicho cliente del sistema. Se debe verificar
 //previamente que la cédula del cliente a borrar exista en el sistema. Además de borrar el

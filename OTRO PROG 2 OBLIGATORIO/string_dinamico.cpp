@@ -137,3 +137,33 @@ boolean streq (strings s1, strings s2)
     return iguales;
 
 }
+
+//PRECONDICIÓN: El archivo viene abierto para escritura.
+void bajar_string(strings s, FILE * f)
+{
+    int i=0;
+    while(s[i]!='\0')
+    {
+        fwrite(&s[i],sizeof(char),1,f);
+        i++;
+    }
+    fwrite(&s[i],sizeof(char),1,f);
+}
+
+//PRECONDICIÓN: El archivo viene abierto para lectura.
+void levantar_string(strings &s,FILE * f)
+{
+    int i = 0;
+    strings aux = new char[MAX];
+    char c;
+    fread(&c,sizeof(char),1,f);
+    while(c!='\0' && !feof(f))
+    {
+        aux[i]=c;
+        fread(&c,sizeof(char),1,f);
+        i++;
+    }
+    aux[i]='\0';
+    strcop(s,aux);
+    strdestruir(aux);
+}

@@ -45,4 +45,10 @@ boolean ExisteReclamo (ListaR L, int numeroReclamo);
 
 fecha ObtenerFechaUltimoReclamo (ListaR L);
 
+void Bajar_Lista (ListaR l);
+
+void Levantar_Lista (ListaR &l);
+
+boolean existeArchivoLista ();
+
 #endif // LISTARECLAMOS_H_INCLUDED

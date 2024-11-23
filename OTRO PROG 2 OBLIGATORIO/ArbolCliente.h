@@ -48,4 +48,12 @@ cliente clienteMinimo (ArbolCliente a);
 
 ArbolCliente devolverClienteCI (ArbolCliente a, long int ci);
 
+void bajar_abb_aux (ArbolCliente a, FILE * f);
+
+void bajar_abb (ArbolCliente a);
+
+void levantar_abb (ArbolCliente &a);
+
+boolean existeArchivoArbol ();
+
 #endif // ARBOLCLIENTE_H_INCLUDED

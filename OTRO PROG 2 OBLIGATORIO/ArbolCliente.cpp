@@ -243,3 +243,49 @@ ArbolCliente devolverClienteCI(ArbolCliente a, long int ci)
     }
     return a;
 }
+
+//PRECONDICIÓN: El archivo viene abierto
+void bajar_abb_aux (ArbolCliente a, FILE * f)
+{
+    if(a!=NULL)
+    {
+        bajar_cliente(a->info,f);
+        bajar_abb_aux(a->hIzq,f);
+        bajar_abb_aux(a->hDer,f);
+    }
+
+}
+
+void bajar_abb (ArbolCliente a)
+{
+    FILE * f;
+    f=fopen("Clientes.dat","wb");
+    bajar_abb_aux(a,f);
+    fclose(f);
+}
+
+//PRECONDICIÓN: El archivo existe
+void levantar_abb (ArbolCliente &a)
+{
+    cliente c;
+    FILE * f;
+    f=fopen("Clientes.dat","rb");
+    levantar_cliente(c,f);
+    while(!feof(f))
+    {
+        insertarCliente(a,c);
+        levantar_cliente(c,f);
+    }
+    fclose(f);
+}
+
+boolean existeArchivoArbol ()
+{
+    boolean existe=FALSE;
+    FILE * a;
+    a = fopen("Clientes.dat", "rb");
+    if(a!=NULL)
+        existe= TRUE;
+    fclose(a);
+    return existe;
+}

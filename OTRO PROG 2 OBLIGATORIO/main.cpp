@@ -28,7 +28,7 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
                 printf("\nCliente ingresado con exito.\n");
             }
             else
-                printf("\nERROR: Cedula ya registrada");
+                printf("\nERROR: Cedula ya registrada\n");
             system("pause");
             break;
         case 2:
@@ -270,11 +270,30 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
 
 int main()
 {
+//    strings s, s2;
+//    strcrear(s);
+//    strcrear(s2);
+//    scan(s);
+//    FILE * a = fopen("prueba.txt","wb");
+//    bajar_string(s,a);
+//    fclose(a);
+//    FILE * b = fopen("prueba.txt","rb");
+//    levantar_string(s2,b);
+//    fclose(b);
+//    print(s2);
+
+
     int opcion;
     ListaR listaReclamos;
     ArbolCliente ArbolClientes;
     crear(ArbolClientes);
     Crear(listaReclamos);
+
+    if(existeArchivoArbol())
+        levantar_abb(ArbolClientes);
+
+    if(existeArchivoLista())
+        Levantar_Lista(listaReclamos);
 
     do
     {
@@ -303,4 +322,6 @@ int main()
         }
     }
     while (opcion != 0);
+    bajar_abb(ArbolClientes);
+    Bajar_Lista(listaReclamos);
 }

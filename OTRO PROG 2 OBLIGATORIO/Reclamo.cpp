@@ -82,4 +82,23 @@ boolean validarReclamo (reclamo r, reclamo a)// EL PRIMER RECLAMO ES EL NUEVO A 
     return b;
 }
 
+//PRECONDICIÓN: El archivo viene abierto para escritura
+void bajar_reclamo (reclamo r, FILE * f)
+{
+    fwrite(&r.n_reclamo,sizeof(int),1,f);
+    fwrite(&r.realizacion,sizeof(fecha),1,f);
+    bajar_string(r.motivo,f);
+    fwrite(&r.ci_cliente,sizeof(long int),1,f);
+    fwrite(&r.solucionado,sizeof(boolean),1,f);
+}
 
+//PRECONDICIÓN: El archivo viene abierto para lectura
+void levantar_reclamo (reclamo &r, FILE * f)
+{
+    fread(&r.n_reclamo,sizeof(int),1,f);
+    fread(&r.realizacion,sizeof(fecha),1,f);
+    strcrear(r.motivo);
+    levantar_string(r.motivo,f);
+    fread(&r.ci_cliente,sizeof(long int),1,f);
+    fread(&r.solucionado,sizeof(boolean),1,f);
+}

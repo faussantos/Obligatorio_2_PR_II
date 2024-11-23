@@ -1,8 +1,7 @@
 #ifndef CLIENTE_H_INCLUDED
 #define CLIENTE_H_INCLUDED
-
 #include "string_dinamico.h"
-
+#include <stdio.h>
 
 typedef struct
 {
@@ -32,6 +31,10 @@ long int darTelefono(cliente c);
 int darCantidadReclamos(cliente c);
 
 void sumarUnReclamo (cliente &c);
+
+void bajar_cliente (cliente c, FILE * f);
+
+void levantar_cliente (cliente &c, FILE * f);
 
 //FUNCIONES ADICIONALES
 

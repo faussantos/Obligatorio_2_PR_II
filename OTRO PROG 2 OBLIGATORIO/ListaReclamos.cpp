@@ -142,43 +142,25 @@ fecha ObtenerFechaUltimoReclamo (ListaR L)
 int cant_reclamos_2fechas(ListaR l, fecha f1, fecha f2)
 {
     int cant = 0;
-    boolean seguir;
+    boolean seguir=TRUE;
     while(l!=NULL && seguir)
     {
-        if(fechaMenor(darFecha(l->info),f1))
+        if(fechaMenor(f1,darFecha(l->info)) == TRUE || compararFecha(f1,darFecha(l->info)) == TRUE)
             seguir = FALSE;
-        l=l->sig;
+        else
+            l=l->sig;
     }
     seguir = TRUE;
     while(l!=NULL && seguir)
     {
-        if(!fechaMenor(darFecha(l->info),f2)&&!compararFecha(darFecha(l->info),f2))
+        if(fechaMenor(darFecha(l->info),f2) == FALSE&&compararFecha(darFecha(l->info),f2)==FALSE)
             seguir = FALSE;
         else
         {
             cant++;
             l=l->sig;
         }
-
-
     }
-
-//    while(l!=NULL && fechaMenor(aux,f1)==TRUE)
-//    {
-//        printFecha(aux);
-//        printf("\n");
-//        printFecha(f1);
-//        l=l->sig;
-//        aux=darFecha()
-//    }
-//    while(l!=NULL && (fechaMenor(darFecha(l->info),f2) || !compararFecha(darFecha(l->info),f2)));
-//    {
-//        printFecha(darFecha(l->info));
-//        printf("\n");
-//        printFecha(f2);
-//        cant++;
-//        l=l->sig;
-//    }
     return cant;
 }
 
@@ -215,3 +197,39 @@ void CantidadResueltosSinResolver(ListaR L, int &resueltos, int &sinResolver)
     }
 }
 
+void Bajar_Lista (ListaR l)
+{
+    FILE * f;
+    f = fopen("Reclamos.dat","wb");
+    while(l!=NULL)
+    {
+        bajar_reclamo(l->info,f);
+        l=l->sig;
+    }
+    fclose(f);
+}
+
+void Levantar_Lista (ListaR &l)
+{
+    FILE * f;
+    f = fopen("Reclamos.dat","rb");
+    reclamo r;
+    levantar_reclamo(r,f);
+    while(!feof(f))
+    {
+        InsBack(l,r);
+        levantar_reclamo(r,f);
+    }
+    fclose(f);
+}
+
+boolean existeArchivoLista ()
+{
+    boolean existe=FALSE;
+    FILE * a;
+    a = fopen("Reclamos.dat", "rb");
+    if(a!=NULL)
+        existe= TRUE;
+    fclose(a);
+    return existe;
+}
