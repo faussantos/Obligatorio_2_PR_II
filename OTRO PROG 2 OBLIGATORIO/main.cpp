@@ -20,6 +20,7 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
         switch(opcionAltasBajas)
         {
         case 1:
+            //Ingresar Cliente
             printf(":: INGRESO DE CLIENTE ::\n\n");
             cargaCliente(c);
             if(!ExisteCliente(ArbolClientes,darCedula_cliente(c)))
@@ -102,7 +103,7 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
                 listar_clientes_ordenados(ArbolClientes);
             else
                 printf("Lista vacia");
-                printf("\n");
+            printf("\n");
             system("pause");
             break;
         case 2:
@@ -117,21 +118,28 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
             }
             else
                 printf("Error: No existe cliente con esa cedula");
-                printf("\n");
+
+            printf("\n");
             system("pause");
             break;
         case 3:
             //Reclamos por fecha
             printf(":: RECLAMOS DE FECHA ::");
             cargaFecha(fechaIngresada);
+
+            printf("\n");
+
             if(validarFecha(fechaIngresada))
             {
+                printf("\nReclamos:\n\n");
                 ListarReclamosFecha(listaReclamos,fechaIngresada);
             }
             else
             {
                 printf("Fecha incorrecta");
             }
+
+            printf("\n\n");
             system("pause");
             break;
         case 4:
@@ -139,6 +147,8 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
             printf(":: INFORMACION DE CLIENTE POR NUMERO DE RECLAMO ::\n\n");
             printf("Ingrese el numero de reclamo: ");
             scanf("%d",&nroReclamo);
+
+            printf("\n");
 
             if (ExisteReclamo(listaReclamos, nroReclamo) == TRUE)
             {
@@ -150,6 +160,7 @@ void procesarListados(ListaR listaReclamos, ArbolCliente ArbolClientes)
                 printf("El numero de reclamo ingresado no existe");
             }
 
+            printf("\n");
             system("pause");
             break;
         case 0:
@@ -203,10 +214,13 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
             system("pause");
             break;
         case 3:
+            //Cant reclamos resueltos y sin resolver
             printf(":: CANTIDAD DE RECLAMOS RESUELTOS Y SIN RESOLVER :: \n\n");
             CantidadResueltosSinResolver(listaReclamos, reclamosResueltos, reclamosSinResolver);
             printf("Resueltos: %d", reclamosResueltos);
             printf("\nSin resolver: %d", reclamosSinResolver);
+
+            printf("\n\n");
             system("pause");
             //Reclamos solucionados / sin solucionar
             break;
@@ -270,27 +284,16 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
 
 int main()
 {
-//    strings s, s2;
-//    strcrear(s);
-//    strcrear(s2);
-//    scan(s);
-//    FILE * a = fopen("prueba.txt","wb");
-//    bajar_string(s,a);
-//    fclose(a);
-//    FILE * b = fopen("prueba.txt","rb");
-//    levantar_string(s2,b);
-//    fclose(b);
-//    print(s2);
-
-
     int opcion;
-    ListaR listaReclamos;
+
     ArbolCliente ArbolClientes;
     crear(ArbolClientes);
-    Crear(listaReclamos);
 
     if(existeArchivoArbol())
         levantar_abb(ArbolClientes);
+
+    ListaR listaReclamos;
+    Crear(listaReclamos);
 
     if(existeArchivoLista())
         Levantar_Lista(listaReclamos);
@@ -322,6 +325,7 @@ int main()
         }
     }
     while (opcion != 0);
+
     bajar_abb(ArbolClientes);
     Bajar_Lista(listaReclamos);
 }

@@ -4,40 +4,44 @@ void crear (ArbolCliente &a)
 {
     a = NULL;
 }
+
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
 //Saber si un árbol está vacío
 boolean esVacio (ArbolCliente a)
 {
     boolean es = TRUE;
     if (a != NULL)
         es = FALSE;
+
     return es;
 }
+
+
+//PRECONDICION: el árbol no es nulo
 //Obtener la raíz del árbol
-//Precondición: el árbol no es nulo
 cliente darRaiz (ArbolCliente a)
 {
     return a->info;
 }
+
+//PRECONDICION: el árbol no es nulo
 //Devolver un subárbol izquierdo
 ArbolCliente hijoIzquierdo (ArbolCliente a)
 {
     return a->hIzq;
 }
+
+//PRECONDICION: el árbol no es nulo
 //Devolver un subárbol derecho
 ArbolCliente hijoDerecho (ArbolCliente a)
 {
     return a->hDer;
 }
-//Dados dos árboles, construir otro árbol con una nueva raíz y que los tenga como hijos izq. y der.
-void Cons (ArbolCliente i, ArbolCliente d, cliente raiz, ArbolCliente &a)
-{
-    a = new NodoArbol;
-    a->info = raiz;
-    a->hIzq = i;
-    a->hDer = d;
-}
 
-void insertarCliente (ArbolCliente &a, cliente c)// c no pertence al arbol
+
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
+//PRECONDICION: El nro de cedula de c no debe pertenecer al arbol
+void insertarCliente (ArbolCliente &a, cliente c)
 {
     if (a==NULL)
     {
@@ -56,6 +60,8 @@ void insertarCliente (ArbolCliente &a, cliente c)// c no pertence al arbol
             insertarCliente(a->hDer,c);
     }
 }
+
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
 void borrarClienteminimo (ArbolCliente &a)
 {
     ArbolCliente aux;
@@ -69,6 +75,7 @@ void borrarClienteminimo (ArbolCliente &a)
         borrarClienteminimo(a->hIzq);
 }
 
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
 int ContarClientes (ArbolCliente a)
 {
     if (a == NULL)
@@ -76,6 +83,7 @@ int ContarClientes (ArbolCliente a)
     else
         return 1 + ContarClientes (a -> hIzq) + ContarClientes (a -> hDer);
 }
+
 int ContarCLientesNorec (ArbolCliente a)
 {
     if (a!=NULL)
@@ -89,7 +97,7 @@ int ContarCLientesNorec (ArbolCliente a)
         return 0;
 }
 
-//PRECONDICIÓN: EL ARBOL NO PUEDE ESTAR VACIO
+//PRECONDICIÓN: El arbol no puede estar vacío
 void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
 {
     if (a != NULL)
@@ -124,8 +132,8 @@ void CedulaMasRec(ArbolCliente a, int &cantReclamos, long int &ci)
     }
 }
 
-
-boolean ExisteCliente (ArbolCliente a, long int ci)// tiene q estar registrado ese numero de cedula
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
+boolean ExisteCliente (ArbolCliente a, long int ci)
 {
     boolean encontre = FALSE;
     while(a!=NULL && !encontre)
@@ -143,6 +151,7 @@ boolean ExisteCliente (ArbolCliente a, long int ci)// tiene q estar registrado e
     return encontre;
 }
 
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
 int cant_clientes_apellido (strings apellido, ArbolCliente a)
 {
     strings s;
@@ -159,7 +168,7 @@ int cant_clientes_apellido (strings apellido, ArbolCliente a)
     }
 }
 
-
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
 void listar_cliente_ci(ArbolCliente a, long int ci)
 {
     while(darCedula_cliente(a->info)!=ci && a!=NULL)
@@ -176,6 +185,7 @@ void listar_cliente_ci(ArbolCliente a, long int ci)
         printf("ERROR: Cliente no encontrado");
 }
 
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
 void listar_clientes_ordenados (ArbolCliente a)
 {
     if(a != NULL)
@@ -232,6 +242,7 @@ void Borrar (long int ci, ArbolCliente &a)
     }
 }
 
+//PRECONDICION: El arbol debe haberse inicializado anteriormente
 ArbolCliente devolverClienteCI(ArbolCliente a, long int ci)
 {
     while(a!=NULL && darCedula_cliente(a->info)!=ci)
@@ -243,6 +254,17 @@ ArbolCliente devolverClienteCI(ArbolCliente a, long int ci)
     }
     return a;
 }
+
+//Dados dos árboles, construir otro árbol con una nueva raíz y que los tenga como hijos izq. y der.
+void Cons (ArbolCliente i, ArbolCliente d, cliente raiz, ArbolCliente &a)
+{
+    a = new NodoArbol;
+    a->info = raiz;
+    a->hIzq = i;
+    a->hDer = d;
+}
+
+// ------------ FILE
 
 //PRECONDICIÓN: El archivo viene abierto
 void bajar_abb_aux (ArbolCliente a, FILE * f)
@@ -289,3 +311,5 @@ boolean existeArchivoArbol ()
     fclose(a);
     return existe;
 }
+
+// ------------ FILE

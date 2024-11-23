@@ -51,59 +51,61 @@
 1731874042 c:\users\felip\onedrive\escritorio\otro prog 2 obligatorio\arbolcliente.h
 	"cliente.h"
 
-1732244941 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
+1732400883 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.cpp
 	"ArbolCliente.h"
 
-1732237579 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
+1732398896 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\arbolcliente.h
 	"cliente.h"
 	<stdio.h>
 
-1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.h
+1732398896 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.h
 	"string_dinamico.h"
+	<stdio.h>
 
-1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\string_dinamico.h
+1732398896 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\string_dinamico.h
 	"boolean.h"
+	<stdio.h>
 
 1731969773 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.h
 
-1731969894 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.cpp
+1732301195 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\boolean.cpp
 	"boolean.h"
 	<stdio.h>
 
-1732237579 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.cpp
+1732398896 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\cliente.cpp
 	"cliente.h"
 	<stdio.h>
 
-1732246350 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.cpp
+1732398093 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.cpp
 	"fecha.h"
 	<stdio.h>
 
 1732225241 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\fecha.h
 	"boolean.h"
 
-1732247218 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
+1732401202 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.cpp
 	"ListaReclamos.h"
 
-1732247086 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
+1732398896 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\listareclamos.h
 	<stdio.h>
 	"reclamo.h"
 
-1732237579 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.h
+1732398896 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.h
 	"string_dinamico.h"
 	"fecha.h"
 
-1732247687 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
+1732401518 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\main.cpp
 	<stdio.h>
 	<stdlib.h>
 	"menu.h"
 	"ListaReclamos.h"
 	"ArbolCliente.h"
 
-1732237579 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.cpp
+1732398896 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\reclamo.cpp
 	"reclamo.h"
 	<stdio.h>
 
-1732237579 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\string_dinamico.cpp
+1732398896 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\string_dinamico.cpp
 	"string_dinamico.h"
 	<stdio.h>
 
@@ -233,7 +235,7 @@
 
 1732147270 c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\menu.h
 
-1732147270 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\menu.cpp
+1732301195 source:c:\ude\programacion 2\obligatorio_2_pr_ii\otro prog 2 obligatorio\menu.cpp
 	<iostream>
 	"menu.h"
 

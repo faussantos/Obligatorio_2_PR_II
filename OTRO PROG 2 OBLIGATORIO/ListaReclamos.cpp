@@ -4,6 +4,8 @@ void Crear (ListaR &L)
 {
     L = NULL;
 }
+
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 boolean Vacia (ListaR L)
 {
     boolean es = FALSE;
@@ -11,29 +13,25 @@ boolean Vacia (ListaR L)
         es = TRUE;
     return es;
 }
-/* Precondici�n: lista NO vac�a */
+
+//PRECONDICION: La lista no puede estar vacía
 reclamo Primero (ListaR L)
 {
     return L -> info;
 }
-/* Precondici�n: lista NO vac�a */
+
+//PRECONDICION: La lista no puede estar vacía
 void Resto (ListaR & L)
 {
     ListaR aux = L;
     L = L -> sig;
     delete aux;
 }
-void InsFront (ListaR & L, reclamo r)
-{
-    ListaR aux = new NodoLista;
-    aux -> info = r;
-    aux -> sig = L;
-    L = aux;
-}
 
-int LargoReclamos (ListaR L)
-//indica el largo de la cantidad de reclamos para poder restarle a la cantidad total
+//PRECONDICION: La lista debe haberse inicializado anteriormente
+//Indica el largo de la cantidad de reclamos para poder restarle a la cantidad total
 //de clientes de esa manerra la diferencia sera la cantidad de cleintes q no reclamaron
+int LargoReclamos (ListaR L)
 {
     if (L == NULL)
         return 0;
@@ -41,6 +39,7 @@ int LargoReclamos (ListaR L)
         return 1 + LargoReclamos (L -> sig);
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe cliente dentro del main
 {
     while (L!=NULL)
@@ -55,6 +54,7 @@ void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe 
     }
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 void ListarReclamosFecha (ListaR L, fecha f)
 {
     while (L!=NULL)
@@ -62,12 +62,14 @@ void ListarReclamosFecha (ListaR L, fecha f)
         if(compararFecha(darFecha(L->info), f) == TRUE)
         {
             printReclamo(L->info);
+            printf("\n");
         }
 
         L=L->sig;
     }
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 long int ObtenerCedulaClienteReclamo (ListaR L, int numeroReclamo)
 {
     long int ci;
@@ -87,6 +89,7 @@ long int ObtenerCedulaClienteReclamo (ListaR L, int numeroReclamo)
     return ci;
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 boolean ExisteReclamo (ListaR L, int numeroReclamo)
 {
     boolean encontre = FALSE;
@@ -104,6 +107,7 @@ boolean ExisteReclamo (ListaR L, int numeroReclamo)
     return encontre;
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 void InsBack (ListaR &L, reclamo r)
 {
     if(L!=NULL)
@@ -181,6 +185,7 @@ ListaR puntero_numReclamo (ListaR l, int num)
     return l;
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 void CantidadResueltosSinResolver(ListaR L, int &resueltos, int &sinResolver)
 {
     resueltos = 0;
@@ -197,6 +202,7 @@ void CantidadResueltosSinResolver(ListaR L, int &resueltos, int &sinResolver)
     }
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 void Bajar_Lista (ListaR l)
 {
     FILE * f;
@@ -209,6 +215,7 @@ void Bajar_Lista (ListaR l)
     fclose(f);
 }
 
+//PRECONDICION: La lista debe haberse inicializado anteriormente
 void Levantar_Lista (ListaR &l)
 {
     FILE * f;
@@ -222,6 +229,7 @@ void Levantar_Lista (ListaR &l)
     }
     fclose(f);
 }
+
 
 boolean existeArchivoLista ()
 {
