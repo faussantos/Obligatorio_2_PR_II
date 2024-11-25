@@ -159,7 +159,7 @@ int cant_clientes_apellido (strings apellido, ArbolCliente a)
         return 0;
     else
     {
-        darNombre(a->info,s);
+        darApellido(a->info,s);
 
         if(streq(apellido,s) == TRUE)
             return 1 + cant_clientes_apellido(apellido,a->hIzq) + cant_clientes_apellido(apellido,a->hDer);

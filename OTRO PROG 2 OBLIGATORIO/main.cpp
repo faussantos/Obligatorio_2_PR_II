@@ -40,7 +40,9 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
             if(ExisteCliente(ArbolClientes,ci))
             {
                 Borrar(ci,ArbolClientes);
+                BorrarReclamoCliente (listaReclamos,ci);
                 printf("\nCliente eliminado con exito.\n");
+
             }
             else
                 printf("\nError: No existe cliente con esa cedula\n");
@@ -54,10 +56,10 @@ void procesarAltasBajas(ListaR &listaReclamos, ArbolCliente &ArbolClientes)
             aux=devolverClienteCI(ArbolClientes,darCedula_reclamo(nuevoReclamo));
             if(aux!=NULL)
             {
-                sumarUnReclamo(aux->info);
                 if(Vacia(listaReclamos) == TRUE || fechaMenor(darFecha(nuevoReclamo), ObtenerFechaUltimoReclamo(listaReclamos)) == FALSE)
                 {
                     InsBack(listaReclamos,nuevoReclamo);
+                    sumarUnReclamo(aux->info);
                     printf("\nReclamo ingresado con exito\n");
                 }
                 else
@@ -204,7 +206,7 @@ void procesarConsultas(ListaR listaReclamos, ArbolCliente ArbolClientes)
             printf("Ingrese un apellido: ");
             scan(apellidoIngresado);
             cantidadClientesApellido = cant_clientes_apellido(apellidoIngresado, ArbolClientes);
-            printf("Existen %d clientes con el apellido ingresado", cantidadClientesApellido);
+            printf("\nExisten %d clientes con el apellido ingresado\n", cantidadClientesApellido);
             system("pause");
             break;
         case 2:

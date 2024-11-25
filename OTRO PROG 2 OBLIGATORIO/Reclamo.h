@@ -3,6 +3,8 @@
 
 #include "string_dinamico.h"
 #include "fecha.h"
+#include <stdio.h>
+#include <stdlib.h>
 typedef struct
 {
     int n_reclamo;

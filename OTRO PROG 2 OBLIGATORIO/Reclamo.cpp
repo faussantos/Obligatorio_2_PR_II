@@ -1,5 +1,4 @@
 #include "reclamo.h"
-#include <stdio.h>
 void cargaReclamo (reclamo &r,int x)//verificar q el cliente exista y  validarreclamo ==true;
 {
     r.n_reclamo=x;
@@ -7,6 +6,7 @@ void cargaReclamo (reclamo &r,int x)//verificar q el cliente exista y  validarre
     cargaFecha(r.realizacion);
     while (!validarFecha(r.realizacion))// y comprobar tb que sea posterior a la fecha anterior del ulitmo reclmao registrado
     {
+        system("cls");
         printf("ERROR: Fecha invalida. Intente nuevamente: \n");
         printf("Ingrese fecha de reclamo");
         cargaFecha(r.realizacion);

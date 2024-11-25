@@ -40,7 +40,7 @@ int LargoReclamos (ListaR L)
 }
 
 //PRECONDICION: La lista debe haberse inicializado anteriormente
-void ListarReclamosCliente (ListaR L, long int ci)// usarlo con un while existe cliente dentro del main
+void ListarReclamosCliente (ListaR L, long int ci)
 {
     while (L!=NULL)
     {
@@ -240,4 +240,34 @@ boolean existeArchivoLista ()
         existe= TRUE;
     fclose(a);
     return existe;
+}
+
+//PRECONDICION: La lista debe haberse inicializado anteriormente
+void BorrarReclamoCliente(ListaR &L, long int ci) {
+    ListaR actual = L;
+    ListaR anterior = NULL;
+
+    while (actual != NULL)
+    {
+        if (ci == darCedula_reclamo(actual->info)) {
+            ListaR aux = actual;
+
+            if (anterior == NULL)
+            {
+                L = actual->sig;
+            }
+            else
+            {
+                anterior->sig = actual->sig;
+            }
+
+            actual = actual->sig;
+            delete aux;
+        }
+        else
+        {
+            anterior = actual;
+            actual = actual->sig;
+        }
+    }
 }

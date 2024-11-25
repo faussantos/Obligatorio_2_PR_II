@@ -51,4 +51,6 @@ void Levantar_Lista (ListaR &l);
 
 boolean existeArchivoLista ();
 
+void BorrarReclamoCliente (ListaR &L, long int ci);
+
 #endif // LISTARECLAMOS_H_INCLUDED
